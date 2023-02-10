@@ -17,15 +17,15 @@
                     </li>
                     </li>
                     <li class="form-inline">
-                        <a class="btn btn-outline-success" href="">Рейтинг пользователей</a>
+                        <a class="btn btn-outline-success" href="{% url 'players_rate'%}">Рейтинг пользователей</a>
                     </li>
                 </ul>
             </div>
             {% if request.user.is_authenticated %}
-            Привет, {{request.user.username}}!
+            Привет, <a href="{% url 'player_info' request.user.username %}">{{request.user.username}}</a> ! Твой ранг: {{user.player.rang}}
             <a href="{% url 'logout' %}">log out</a>
             {% else %}
-            <form method="POST" action="{% url 'login' %}">{% csrf_token %}
+            <form method="POST" action="{% url 'login' request.user.username %}">{% csrf_token %}
                 <input name="username" type="text" placeholder="username">
                 <input name="password" type="password" placeholder="password">
                 <button type="submit">login</button>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>{{player.user.username}}</h1>
+            <ol>
+                <li>
+                    Ранг: {{player.rang}}
+                    Игр сыграно: {{player.games_played}}
+                    Выигрышей: {{player.games_won}}
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <a href="{% url 'index' %}">Назад</a>
+    </div>
+
+</div>
+{% endblock %}

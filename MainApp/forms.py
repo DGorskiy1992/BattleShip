@@ -27,7 +27,4 @@ class UserRegistrationForm(ModelForm):
         return user
 
 
-class PlayerForm(ModelForm):
-    class Meta:
-        model = Player
-        fields = ["rang", "game_played", "game_won"]
+

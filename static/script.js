@@ -123,6 +123,8 @@ var controller = {
             var hit = model.fire(location);
             if(hit && model.shipsSunk === model.numShips){
                 view.displayMessage("Потопили" + model.numShips + "корабли за "+ this.guesses + "выстрелов");
+                document.getElementById("is_won").value = "true";
+                document.getElementById("is_won_form").submit();
             }
         }
     }

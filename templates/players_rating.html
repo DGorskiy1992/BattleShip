@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Рейтинг игроков</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Игрок</th>
+                    <th scope="col">Ранг</th>
+                    <th scope="col">Игр сыграно</th>
+                    <th scope="col">Игр выиграно</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for player in players %}
+                <tr>
+                    <td>{{ player.id }}</td>
+                    <td><a href="{% url 'player_info' player.user.username %}">{{player.user.username}}</a></td>
+                    <td>{{player.rang}}</td>
+                    <td>{{player.games_played}}</td>
+                    <td>{{player.games_won}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

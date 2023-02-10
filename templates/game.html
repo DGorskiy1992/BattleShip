@@ -126,5 +126,8 @@ form input{
         </div>
     </div>
 </div>
+<form id="is_won_form" action="{% url 'game_won' %}" method="POST">{% csrf_token %}
+    <input id="is_won" name="is_won" type="hidden" value="false">
+</form>
 <script type="text/javascript" src="{% static 'script.js' %}"></script>
 {% endblock %}
