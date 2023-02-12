@@ -43,3 +43,9 @@ form input{
 .miss{
 	background: url('/static/img/miss.png') no-repeat center center;
 }
+
+td: hover{
+    background-color: #398E0E;
+    border-color: #4FC414;
+    cursor: pointer;
+}
